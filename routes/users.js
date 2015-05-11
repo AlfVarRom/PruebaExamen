@@ -54,8 +54,7 @@ module.exports=function(app) {
     updateUser = function (req, res) {
         console.log('UPDATE user');
         User.findOneAndUpdate({"_id": req.params._id}, req.body, function (err, user) {
-            console.log(user._id);
-
+            //console.log(user._id);
             user.set(function (err) {
                 if (!err) {
                     console.log('Updated');
@@ -84,7 +83,8 @@ module.exports=function(app) {
                     username: req.body.username,
                     password: req.body.password,
                     email: req.body.email,
-                    age: req.body.age
+                    age: req.body.age,
+                    libros:req.body.libros
 
                 });
                 user.save(function (err) {

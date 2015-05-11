@@ -11,7 +11,8 @@ var schema = new Schema({
         username: {type: String},
         password: {type: String},
         email: {type: String},
-        age: {type: Number}
+        age: {type: Number},
+        libros:[{type: Schema.Types.ObjectId, ref: 'Libro'}]
     },
     {versionKey: false});
 
