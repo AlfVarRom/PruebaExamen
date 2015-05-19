@@ -25,8 +25,8 @@ routes = require('./routes/users')(app);
 routes = require('./routes/libros')(app);
 
 
-
-mongoose.connect('mongodb://localhost/Libreria', function (err, res) {
+mongoose.connect('mongodb://localhost/Examen', function (err, res){
+//mongoose.connect('mongodb://localhost/Libreria', function (err, res) {
     if (err) {
         console.log('ERROR: connecting to Database. ' + err);
     } else {

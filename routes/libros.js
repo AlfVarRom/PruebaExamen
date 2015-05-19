@@ -118,6 +118,18 @@ module.exports=function(app) {
         });
     }
 
+    //GET libro by name
+    findLibroByName = function (req, res) {
+        Libro.findOne({"titulo": req.params.titulo}, function (err, libro) {
+            if (!err) {
+                res.send(libro);
+            }
+            else {
+                console.log('ERROR: ' + err);
+            }
+        });
+    }
+
 
 
 
@@ -129,6 +141,7 @@ module.exports=function(app) {
     app.put('/libro/:_id', updateLibro);
     app.delete('/libro/:_id', deleteLibro);
     app.get('/libros/tematica/:tematica', findByTematica)
+    app.get('/libros/titulo/:titulo', findLibroByName)
 
 
 }
